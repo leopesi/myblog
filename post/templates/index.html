@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+    .head_text {
+        color: white;
+    }
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> leonardo pesi </h3>
+                    <p class="text-light">Tecnologicamente falando. &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.date}} </p>
+                    <p class="card-text">{{post.text|slice:":100" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Saiba mais &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% block sidebar %}
+        <style>.card{box-shadow: 0 16px 48px #E3E7EB;}</style>
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4 float-right ">
+            <div class="card my-4">
+                <h5 class="card-header">Quem sou</h5>
+                <div class="card-body">
+                    <p class="card-text"> Sou graduado em administração de empresas, tenho fluência tecnológica, autodidática, estudo
+                        desenvolvimento de software desde 2018 e sou apaixonado pelo universo Python. Me comunico
+                        de forma clara, a vida me ensinou resiliência e trabalhar em grupo nunca me foi um problema.
+                        Estes atributos somadas à minha experiência orçanizacional são meus diferenciais</p>
+                    <a href="http://193.123.110.192/" class="btn btn-danger">Repositório!</a>
+                </div>
+            </div>
+        </div>
+        {% endblock sidebar %}
+
+    </div>
+</div>
+{%endblock%}
