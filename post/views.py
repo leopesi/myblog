@@ -1,9 +1,7 @@
 from django.views import generic
 from .models import Post
-from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
-from django.utils import timezone
-
+from django.urls import reverse_lazy
 from .forms import PostForm
 
 def post_create(request):
@@ -23,15 +21,37 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     template_name = 'index.html'
 
+class MyPostListView(generic.ListView):
+    queryset = Post.objects.all()
+    context_object_name = 'posts'
+    template_name = 'my_posts.html'
+
 class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
 
 class PostUpdateView(generic.UpdateView):
+    fields = '__all__'
     model = Post
+    context_object_name = 'post_update'
     template_name = 'post_update.html'
 
+    def get_success_url(self):
+        if 'slug' in self.kwargs:
+            slug = self.kwargs['slug']
+        else:
+            slug = 'demo'
+        return reverse_lazy('post_detail', kwargs={'slug': slug})
+
 class PostDeleteView(generic.DeleteView):
+    fields = '__all__'
     model = Post
+    context_object_name = 'delete_post'
     template_name = 'post_delete.html'
+
+    def get_success_url(self):   # Permite personalizar a visualização
+        return reverse_lazy('blog')
+
+    def get(self, *args, **kwargs):
+        return self.post(*args, **kwargs)
 

@@ -1,13 +1,20 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-                <p class="card-text ">{{ object.content | safe }}</p>
-            </div>
+            <form action="" method="post">
+            {% csrf_token %}
+                <div class="card-body">
+                    <h1>{% block title %} {{ form.title|as_crispy_field }} {% endblock title %}</h1>
+                    <p class=" text-muted">{{ form.author|as_crispy_field }} | {{ form.status|as_crispy_field }}</p>
+                    <p class=" text-muted">{{ form.slug|as_crispy_field }} </p>
+                    <p class="card-text ">{{ form.text|as_crispy_field | safe }}</p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <form/>
         </div>
 
         {% block sidebar %}
