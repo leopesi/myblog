@@ -44,14 +44,13 @@ class PostUpdateView(generic.UpdateView):
         return reverse_lazy('post_detail', kwargs={'slug': slug})
 
 class PostDeleteView(generic.DeleteView):
-    fields = '__all__'
     model = Post
+    fields = '__all__'
     context_object_name = 'delete_post'
-    template_name = 'post_delete.html'
+    template_name = 'post_confirm_delete.html'
 
     def get_success_url(self):   # Permite personalizar a visualização
-        return reverse_lazy('blog')
+        return reverse_lazy('myposts')
 
     def get(self, *args, **kwargs):
         return self.post(*args, **kwargs)
-

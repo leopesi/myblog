@@ -7,9 +7,8 @@ class PostForm(ModelForm):
         label='Slug',
         help_text='É a parte da URL que identifica uma página ex. "webpage.com.br/slug"',
     )
-    status = ChoiceField(
-        label='Status',
-        widget=RadioSelect(),
+    status = RadioSelect(
+
         choices=[
             ['0', 'Rascunho'],
             ['1', 'Publicado'],
