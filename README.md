@@ -1,11 +1,11 @@
 # Projeto Postagem - Django framework
 
-###Criar um site de postagem:
+### Criar um site de postagem:
 - Deverá ter um CRUD (Create, Read, Update, Delete) 
 - As informações que devem estar dentro do CARD
 - Título – Data – Texto - Autor
 
-###Regras:
+### Regras:
 - O Texto digitado pelo usuário deverá ser salvo com letra maiúscula;
 - As postagens devem estar ordenadas, o que for cadastrado por último deverá estar no
 topo da postagem;
