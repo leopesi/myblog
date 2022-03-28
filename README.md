@@ -1,5 +1,9 @@
 # Projeto Postagem - Django framework
 
+### Confira o app em https://sifat-blog-teste.herokuapp.com/about
+usuário de teste: guest
+password: 12345678!
+
 ### Criar um site de postagem:
 - Deverá ter um CRUD (Create, Read, Update, Delete) 
 - As informações que devem estar dentro do CARD
@@ -19,6 +23,7 @@ o Faça sua postagem
 - [x] Python 
 - [x] Django
 - [x] PostgreSQL
+- [x] Heroku 
 - [x] Virtualenv
 - [x] Git e Github
 - [x] JavaScript, HTML e CSS
