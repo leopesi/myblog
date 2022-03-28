@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASE_URL = 'postgres://nzqxihrkezxlsc:97ce3648a4dcabf3f9bd1237605f15417499f98bebbee805b723aef6a206f811@ec2-54-85-113-73.compute-1.amazonaws.com:5432/d8l2t93lh0t165'
+DATABASE_URL = 'postgres://btgdppficlwmsg:dddf197b565ff97675e8ecedf1ba55c7d2b323aec523e36b917c67502553c5fb@ec2-3-225-213-67.compute-1.amazonaws.com:5432/d5iggqk25dmvhk'
 
 # Parse database configuration from $DATABASE_URL
 DATABASES = {
