@@ -1,107 +1,117 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
+<head>
+    <title>Django Central</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <head>
-        <title>Django Central</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    </head>
+<body>
+<style>
+        body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: #fdfdfd;
+    }
+    .shadow {
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+    }
+    .btn-danger {
+        color: #fff;
+        background-color: #f00000;
+        border-color: #dc281e;
+    }
+    .masthead {
+        background: #3398E1;
+        height: auto;
+        padding-bottom: 15px;
+        box-shadow: 0 16px 48px #E3E7EB;
+        padding-top: 10px;
+    }
+</style>
 
-    <body>
-        <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
-    </style>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="">LPS</a>
+    <img class="navbar-brand" src="/img/img.png">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">LPS</a>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog' %}">Postagens Publicadas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'post_create' %}">Faça sua postagem</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8080/admin/">ADMIN</a>
+            </li>
+        </ul>
+    </div>
 
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog' %}">Postagens Publicadas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'post_create' %}">Faça sua postagem</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://127.0.0.1:8080/admin/">ADMIN</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Toggler/collapsibe Button -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 
-            <!-- Toggler/collapsibe Button -->
-            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-
-            <!-- Links -->
-            <div class=" navbar-nav">
-                <ul class=" navbar-nav ">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item " >
-                        <a class="nav-link" href="{% url 'myposts'%}"><i class="fa fa-cog fa-fw" style="color:white"> </i>&nbsp;{{ user.get_username }}</a>
-                    </li>
-                    <li class="nav-item " >
-                        <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}"> <i class="fa fa-sign-out" style="color:white"></i>&nbsp;logout </a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item ">
-                        <a class="nav-link" href="{% url 'login'%}?next={{request.path}}"> <i class="fa fa-sign-in" style="color:white"></i>&nbsp;login </a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
+    <!-- Links -->
+    <div class=" navbar-nav">
+        <ul class=" navbar-nav ">
+            {% if user.is_authenticated %}
+            <li class="nav-item " >
+                <a class="nav-link" href="{% url 'myposts'%}"><i class="fa fa-cog fa-fw" style="color:white"> </i>&nbsp;{{ user.get_username }}</a>
+            </li>
+            <li class="nav-item " >
+                <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}"> <i class="fa fa-sign-out" style="color:white"></i>&nbsp;logout </a>
+            </li>
+            {% else %}
+            <li class="nav-item ">
+                <a class="nav-link" href="{% url 'login'%}?next={{request.path}}"> <i class="fa fa-sign-in" style="color:white"></i>&nbsp;login </a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+    </nav>
 </nav>
 
-        <!-- Login / Logout -->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> leonardo pesi </h3>
+                    <p class="text-light">Tecnologicamente falando. &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
+{% block content %}
+<!-- Content Goes here -->
+{% endblock content %}
 
+            <!-- Footer -->
 
-        </nav>
-        <br>
-
-
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-        <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Django Central</p>
-        </footer>
-    </body>
+<footer class="py-3 bg-grey">
+    <p class="m-0 text-dark text-center ">Copyright &copy; leopesi</p>
+</footer>
+</body>
 </html>
