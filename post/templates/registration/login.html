@@ -11,52 +11,46 @@
       <p>Your account doesn't have access to this page. To proceed,
       please login with an account that has access.</p>
     {% else %}
-      <p>Please login to see this page.</p>
+
     {% endif %}
   {% endif %}
-
+<!-- Login  -->
 <div class="container">
     <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
+        {% include 'sidebar.html' %}
+        <div class="col-md-9 mt-3 left">
             <div class="card mb-3">
-                <form method="post" action="{% url 'login' %}">
-                    {% csrf_token %}
-                    <table>
-                        <tr>
-                            <td>{{ form.username.label_tag }}</td>
-                            <td>{{ form.username }}</td>
-                        </tr>
-                        <tr>
-                            <td>{{ form.password.label_tag }}</td>
-                            <td>{{ form.password }}</td>
-                        </tr>
-                    </table>
-                    <input type="submit" value="login" />
-                    <input type="hidden" name="next" value="{{ next }}" />
-                </form>
-                {# Assumes you setup the password_reset view in your URLconf #}
-                <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-            </div>
-        </div>
+                <div class="justify-content-center align-items-center row">
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <h2 class="card-title">Login</h2>
+                            <div class="row">
+                                <div class="col-md-6 mt-3 left">
+                                    <div> {{ form.username.label_tag }}</div>
+                                    <div>{{ form.username }}</div>
+                                </div>
+                                <div class="col-md-6 mt-3 left">
+                                    <div>{{ form.password.label_tag }}</div>
+                                    <div>{{ form.password }}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mt-3 left">
+                                <input type="submit" class="btn btn-primary" value="login" />
+                                <input type="hidden" class="form-control" name="next" value="{{ next }}" />
+                                <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+                            </div>
+                        </div>
+                    </form>
 
-        {% block sidebar %}
-        <style>.card{box-shadow: 0 16px 48px #E3E7EB;}</style>
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4 float-right ">
-            <div class="card my-4">
-                <h5 class="card-header">Quem sou</h5>
-                <div class="card-body">
-                    <p class="card-text"> Sou graduado em administração de empresas, tenho fluência tecnológica, autodidática, estudo
-                        desenvolvimento de software desde 2018 e sou apaixonado pelo universo Python. Me comunico
-                        de forma clara, a vida me ensinou resiliência e trabalhar em grupo nunca me foi um problema.
-                        Estes atributos somadas à minha experiência orçanizacional são meus diferenciais</p>
-                    <a href="http://193.123.110.192/" class="btn btn-danger">Repositório!</a>
-                </div>
+
             </div>
+
         </div>
-        {% endblock sidebar %}
     </div>
 </div>
 
-{% endblock %}
+{% endblock content %}
+
+
+
