@@ -6,10 +6,6 @@ class PostForm(ModelForm):
     title = CharField(
         label='Título',
     )
-    author = CharField(
-        label='Autor',
-    )
-
 
 
     slug = CharField(
