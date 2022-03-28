@@ -4,33 +4,27 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 left  top">
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="card-body">
-                    <h1>{% block title %} {{ form.title|as_crispy_field }} {% endblock title %}</h1>
-                    <p class=" text-muted">{{ form.author|as_crispy_field }}  {{ form.status|as_crispy_field }}</p>
-                    <p class=" text-muted">{{ form.slug|as_crispy_field }} </p>
-                    <p class="card-text ">{{ form.text|as_crispy_field | safe }}</p>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+        {% include 'sidebar.html' %}
+        <div class="col-md-9 card mb-4  mt-3 left  top">
+            <div class="card mb-3">
+                <div class="justify-content-center align-items-center row">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <h2 class="card-title">Atualizar Publicação</h2>
+                            <div class="form-group">
+                                <p class=" text-muted">{{ form.title|as_crispy_field }} </p>
+                                <p class=" text-muted">{{ form.author|as_crispy_field }}  {{ form.status|as_crispy_field }}</p>
+                                <p class=" text-muted">{{ form.slug|as_crispy_field }} </p>
+                                <p class="card-text ">{{ form.text|as_crispy_field | safe }}</p>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    {% block sidebar %}
-    <style>.card{box-shadow: 0 16px 48px #E3E7EB;}</style>
-    <!-- Sidebar Widgets Column -->
-    <div class="col-md-4 float-right ">
-        <div class="card my-4">
-            <h5 class="card-header">About Us</h5>
-            <div class="card-body">
-                <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-                <a href="https://djangocentral.com/building-a-blog-application-with-django" class="btn btn-danger">Know more!</a>
             </div>
         </div>
     </div>
-    {% endblock sidebar %}
 </div>
 
 {% endblock content %}

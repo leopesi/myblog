@@ -3,6 +3,11 @@ from .models import Post
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from .forms import PostForm
+from django.shortcuts import render
+
+
+def index(request):
+    return render(request, 'about.html')
 
 def post_create(request):
     if request.method == 'POST':

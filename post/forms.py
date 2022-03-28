@@ -3,6 +3,15 @@ from .models import Post
 
 class PostForm(ModelForm):
 
+    title = CharField(
+        label='Título',
+    )
+    author = CharField(
+        label='Autor',
+    )
+
+
+
     slug = CharField(
         label='Slug',
         help_text='É a parte da URL que identifica uma página ex. "webpage.com.br/slug"',

@@ -1,17 +1,24 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
+<!-- Minhas Postagens Publicadas  -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-                <p class="card-text ">{{ object.content | safe }}</p>
+        {% include 'sidebar.html' %}
+        <div class="col-md-9 mt-3 ">
+            <div class="card mb-3">
+
+                    <div class="card-body">
+                        <h2 class="card-title">Apresentação do Site</h2>
+                        <p class="card-text"> Lorem ipsum dolor sit amet. Vel maxime quidem sed mollitia expedita et repellat deleniti qui tempore amet est dolores nesciunt ea consequatur quibusdam. Eum modi repudiandae et dolor reprehenderit aut nulla aliquid. Ut dolorem dolores ad debitis molestias sit expedita rerum sit voluptas iste qui Quis fugit nam rerum quisquam eum ipsa repudiandae.
+                            Qui omnis rerum qui ipsam quam sit voluptatem necessitatibus et tenetur saepe eos vero excepturi.
+
+                            Qui nesciunt alias eum minima voluptates ut tempora accusamus quibusdam culpa et Quis tenetur sed omnis libero aut mollitia porro. Qui tenetur amet in dolores beatae sit veniam odio ut consequatur eligendi quo quibusdam blanditiis cum quam placeat. Commodi quaerat At adipisci quidem id voluptas tempore non voluptas accusamus sit rerum expedita sit expedita consequatur.
+
+                            Optio error qui sunt sunt et necessitatibus molestiae et delectus labore. Aut unde molestiae ab enim asperiores aut voluptate placeat et officiis iure. Eum dolorum libero et totam galisum ut dolores porro a cumque dolore aut consequatur odit! Rem incidunt rerum est nesciunt dicta est recusandae atque vel dolores iure est cumque culpa et cumque quae sed exercitationem adipisci.</p>
+                </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 

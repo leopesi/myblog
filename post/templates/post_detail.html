@@ -1,29 +1,19 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
+<!-- Minhas Postagens Publicadas  -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.author }} | {{ post.date }}</p>
-                <p class="card-text ">{{ object.text }}</p>
-            </div>
-        </div>
-
-        {% block sidebar %}
-        <style>.card{box-shadow: 0 16px 48px #E3E7EB;}</style>
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4 float-right ">
-            <div class="card my-4">
-                <h5 class="card-header">About Us</h5>
+        {% include 'sidebar.html' %}
+        <div class="col-md-9 mt-3 left">
+            <div class="card mb-3">
                 <div class="card-body">
-                    <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-                    <a href="https://djangocentral.com/building-a-blog-application-with-django" class="btn btn-danger">Know more!</a>
+                    <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                    <p class=" text-muted">{{ post.author }} | {{ post.date }}</p>
+                    <p class="card-text ">{{ object.text }}</p>
                 </div>
             </div>
         </div>
-        {% endblock sidebar %}
-
     </div>
 </div>
 
