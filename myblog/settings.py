@@ -25,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7^qto!9*@l+z87iq+&nre=ddva964f&0+hlz&d!$xit6&r594q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://sifat-blog-teste.herokuapp.com/', '127.0.0.1', ]
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -81,7 +80,7 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+''' 
 DATABASE_URL = 'postgres://btgdppficlwmsg:dddf197b565ff97675e8ecedf1ba55c7d2b323aec523e36b917c67502553c5fb@ec2-3-225-213-67.compute-1.amazonaws.com:5432/d5iggqk25dmvhk'
 
 # Parse database configuration from $DATABASE_URL
@@ -89,7 +88,7 @@ DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL)
 }
 
-''' 
+'''
 DATABASES = {
 
     'default': {
@@ -101,7 +100,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -150,9 +149,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 LOGIN_REDIRECT_URL = '/post/'
 
-#SECURE_SSL_REDIRECT = True
-
-#SESSION_COOKIE_SECURE = True
