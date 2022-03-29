@@ -27,7 +27,7 @@ o Faça sua postagem
 - [x] Heroku 
 - [x] Virtualenv
 - [x] Git e Github
-- [x] JavaScript, HTML e CSS
+- [x] JavaScript, HTML, CSS e Bootstrap
 - [x] Git e Github
 
 ## Como instalar? - *How to install?*
