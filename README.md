@@ -1,8 +1,9 @@
-# Projeto Postagem - Django framework
-
 ### Confira o app em https://sifat-blog-teste.herokuapp.com/about
-usuário de teste: guest
-password: 12345678!
+- usuário de teste: guest
+- password: 12345678!
+
+
+# Projeto Postagem - Django framework
 
 ### Criar um site de postagem:
 - Deverá ter um CRUD (Create, Read, Update, Delete) 
