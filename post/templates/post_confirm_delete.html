@@ -1,17 +1,34 @@
+{% load crispy_forms_tags %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
 
 <!–Delete button will redirect to the href of the element with 'id = caller-id' property in this modal–>
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" caller-id="post.slug" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body confirm-delete">
-        Deseja apagar ?
-        <h2 class="card-title">{{ object.title }}</h2>
+<div class="container">
+      <div class="row">
+        <div class="col-md-9 card mb-4  mt-3 left  top">
+          <div class="card mb-3">
+            <div class="justify-content-center align-items-center row">
+              <div class="modal fade" id="confirmDeleteModal" tabindex="-1" caller-id="post.slug" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body confirm-delete">
+                      Deseja apagar ?
+                      <h2 class="card-title">{{ object.title }}</h2>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                      {% csrf_token %}
+                      <button type="button" class="btn btn-danger" data-dismiss="modal" id="confirmDeleteButtonModal">Sim</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal" id="confirmDeleteButtonModal">Sim</button>
-      </div>
-    </div>
-  </div>
 </div>
 
+{% endblock content %}

@@ -1,9 +1,0 @@
-.columnar{
-  float: left;
-  width: 50%;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
