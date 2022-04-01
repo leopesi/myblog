@@ -1,30 +1,95 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% block title %} Contact US {% endblock %}
 
-<div class="container">
-    <div class="row">
-        {% include 'sidebar.html' %}
-        <div class="col-md-9 card mb-4  mt-3 left  top">
-            <div class="card mb-3">
-                <div class="justify-content-center align-items-center row">
-                    <form action="" method="post">
+{% block body_class %} contact-us {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<body class="presentation-page bg-gray-200">
+  {% include 'includes/navigation-transparent.html' %}
+
+<header>
+  <div class="page-header min-height-150" style="background-image: url('/static/assets/img/city-profile.jpg');" loading="lazy">
+    <span class="mask bg-gradient-dark opacity-8"></span>
+  </div>
+</header>
+
+  <section>
+    <div class="page-header min-vh-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
+            <div class="position-relative h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('/static/assets/img/illustrations/illustration-signin.jpg'); background-size: cover;" loading="lazy"></div>
+          </div>
+          <div class="col-xl-5 col-lg-6 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
+            <div class="card d-flex blur justify-content-center shadow-lg my-sm-0 my-sm-6 mt-8 mb-5">
+              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                <div class="bg-gradient-primary shadow-primary border-radius-lg p-3">
+                  <h3 class="text-white text-primary mb-0">Atualizar</h3>
+                </div>
+              </div>
+              <div class="card-body">
+
+                <form id="contact-form" autocomplete="off" method="post">
                         {% csrf_token %}
                         <div class="card-body">
-                            <h2 class="card-title">Atualizar Publicação</h2>
+
                             <div class="form-group">
-                                <p class=" text-muted">{{ form.title|as_crispy_field }} </p>
-                                <p class=" text-muted">{{ form.author|as_crispy_field }}  {{ form.status|as_crispy_field }}</p>
-                                <p class=" text-muted">{{ form.slug|as_crispy_field }} </p>
-                                <p class="card-text ">{{ form.text|as_crispy_field | safe }}</p>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="row">
+                                    <div class="col-md-12 ps-md-2">
+                                        <div class="input-group input-group-static mb-4">
+                                            <div class="col-12">
+                                                {{ form.title|as_crispy_field }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 ps-md-2">
+                                        <div class="input-group input-group-static mb-4">
+                                            <div class="col-6">
+                                                {{ form.status|as_crispy_field }}
+                                            </div>
+                                            <div class="col-6 form-select-line-height">
+                                                {{ form.author|as_crispy_field }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 ps-md-2">
+                                        <div class="input-group input-group-static mb-4">
+                                            <div class="col-12">
+                                                {{ form.slug|as_crispy_field }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 ps-md-2">
+                                        <div class="input-group input-group-static mb-4">
+                                            <div class="col-12">
+                                                <p class="card-text ">{{ form.text|as_crispy_field | safe }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn bg-gradient-primary mt-3 mb-0">Postar</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </form>
-                </div>
+                  </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </section>
 
 {% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
+
+

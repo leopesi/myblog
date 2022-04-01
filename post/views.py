@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'about.html')
+    return render(request, 'home/about-us.html')
 
 def post_create(request):
     if request.method == 'POST':
