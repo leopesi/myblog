@@ -16,31 +16,34 @@
   <!-- START Testimonials w/ user image & text & info -->
    <section class="py-sm-7 py-5 position-relative">
     <div class="container">
+      <div class="mt-n8 mt-md-n9 text-center">
+        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/caneta.jpg" alt="" loading="lazy">
+      </div>
       <div class="row py-6">
         <!-- Postagens Publicadas -->
-                 <div class="card w-90 mb-5 mx-auto">
-                   <div class="card-body">
-                     <div class="col-sm-8 col-md-10 z-index-2 position-relative mx-auto">
-                       <h3 class="text-center">{{ post.title }}</h3>
-                       <div class="row mb-4">
-                         <div class="col-auto">
-                           <span class="h6">{{ post.author }}</span>
-                         </div>
-                         <div class="col-auto">
-                           <span>{{ post.date|naturaltime}}</span>
-                         </div>
-                       </div>
-                       <p class="text-lg mb-0">
-                         {{post.text }}
-                         <br>
-                         <a href="{% url 'blog' %}" class="text-info icon-move-right">
-                           Voltar
-                           <i class="fas fa-arrow-left text-sm ms-1"></i>
-                         </a>
-                       </p>
-                     </div>
-                   </div>
+         <div class="card w-90 mb-5 mx-auto">
+           <div class="card-body">
+             <div class="col-sm-8 col-md-10 z-index-2 position-relative mx-auto">
+               <h3 class="text-center">{{ post.title }}</h3>
+               <div class="row mb-4">
+                 <div class="col-auto">
+                   <span class="h6">{{ post.author }}</span>
                  </div>
+                 <div class="col-auto">
+                   <span>{{ post.date|naturaltime}}</span>
+                 </div>
+               </div>
+               <p class="text-lg mb-0">
+                 {{post.text }}
+                 <br>
+                 <a href="{% url 'blog' %}" class="text-info icon-move-right">
+                   Voltar
+                   <i class="fas fa-arrow-left text-sm ms-1"></i>
+                 </a>
+               </p>
+             </div>
+           </div>
+         </div>
       </div>
     </div>
   </section>

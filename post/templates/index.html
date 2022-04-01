@@ -16,7 +16,11 @@
   <!-- START Testimonials w/ user image & text & info -->
    <section class="py-sm-7 py-5 position-relative">
     <div class="container">
+      <div class="mt-n8 mt-md-n9 text-center">
+              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="/static/assets/img/caneta.jpg" alt="" loading="lazy">
+            </div>
       <div class="row py-6">
+
         {% for post in posts %}<!-- Postagens Publicadas -->
              <div class="card w-90 mb-5 mx-auto">
                <div class="card-body">
@@ -57,7 +61,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h3 class="mb-5">Check my latest blogposts</h3>
+            <h3 class="mb-5">Publicações em destaque</h3>
           </div>
         </div>
         <div class="row">
@@ -76,7 +80,7 @@
                   Finding temporary housing for your dog should be as easy as
                   renting an Airbnb. That’s the idea behind Rover ...
                 </p>
-                <a href="javascript:;" class="text-info text-sm icon-move-right">Read More
+                <a href="javascript:;" class="text-info text-sm icon-move-right">Veja mais
                   <i class="fas fa-arrow-right text-xs ms-1"></i>
                 </a>
               </div>
@@ -154,14 +158,14 @@
                 <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
                   <div class="mask bg-gradient-dark opacity-8"></div>
                   <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
-                    <h3 class="text-white">Contact Information</h3>
-                    <p class="text-white opacity-8 mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
+                    <h3 class="text-white">Contato</h3>
+                    <p class="text-white opacity-8 mb-4">Sinta a vontade para me contactar.</p>
                     <div class="d-flex p-2 text-white">
                       <div>
                         <i class="fas fa-phone text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8">(+40) 772 100 200</span>
+                        <span class="text-sm opacity-8">(11) 95939 7603</span>
                       </div>
                     </div>
                     <div class="d-flex p-2 text-white">
@@ -169,7 +173,7 @@
                         <i class="fas fa-envelope text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8">hello@creative-tim.com</span>
+                        <span class="text-sm opacity-8">rerileo@hotmail.com</span>
                       </div>
                     </div>
                     <div class="d-flex p-2 text-white">
@@ -177,22 +181,30 @@
                         <i class="fas fa-map-marker-alt text-sm"></i>
                       </div>
                       <div class="ps-3">
-                        <span class="text-sm opacity-8">Dyonisie Wolf Bucharest, RO 010458</span>
+                        <span class="text-sm opacity-8">São Paulo - SP</span>
                       </div>
                     </div>
-                    <div class="mt-4">
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook">
-                        <i class="fab fa-facebook"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Twitter">
-                        <i class="fab fa-twitter"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Dribbble">
-                        <i class="fab fa-dribbble"></i>
-                      </button>
-                      <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Instagram">
-                        <i class="fab fa-instagram"></i>
-                      </button>
+
+                    <div class="d-flex p-2 text-white">
+                      <div>
+                        <i class="fa fa-github "></i>
+                      </div>
+                      <div class="">
+                        <a class="d-flex p-2 text-white" href="https://github.com/leopesi">
+                          <span class="text-sm opacity-8"> github.com/leopesi</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="d-flex p-2 text-white">
+                      <div>
+                        <i class="fa fa-linkedin"></i>
+                      </div>
+                      <div class="">
+                        <a class="d-flex p-2 text-white" href="https://www.linkedin.com/in/leopesi/">
+                          <span class="text-sm opacity-8"> linkedin.com/in/leopesi </span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -200,33 +212,33 @@
               <div class="col-lg-7">
                 <form class="p-3" id="contact-form" method="post">
                   <div class="card-header px-4 py-sm-5 py-3">
-                    <h2>Say Hi!</h2>
-                    <p class="lead"> We'd like to talk with you.</p>
+                    <h2>Deixe um recado</h2>
+                    <p class="lead"> </p>
                   </div>
                   <div class="card-body pt-1">
                     <div class="row">
                       <div class="col-md-12 pe-2 mb-3">
                         <div class="input-group input-group-static mb-4">
-                          <label>My name is</label>
+                          <label>Meu nome é</label>
                           <input type="text" class="form-control" placeholder="Full Name">
                         </div>
                       </div>
                       <div class="col-md-12 pe-2 mb-3">
                         <div class="input-group input-group-static mb-4">
-                          <label>I'm looking for</label>
+                          <label>Interesse</label>
                           <input type="text" class="form-control" placeholder="What you love">
                         </div>
                       </div>
                       <div class="col-md-12 pe-2 mb-3">
                         <div class="input-group input-group-static mb-4">
-                          <label>Your message</label>
+                          <label>Sua mensagem</label>
                           <textarea name="message" class="form-control" id="message" rows="6" placeholder="I want to say that..."></textarea>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6 text-end ms-auto">
-                        <button type="submit" class="btn bg-gradient-info mb-0">Send Message</button>
+                        <button type="submit" class="btn bg-gradient-info mb-0">Enviar</button>
                       </div>
                     </div>
                   </div>
@@ -238,6 +250,5 @@
       </div>
     </div>
   </section>
-<script src="{% static 'js/main_style.js'%}"></script>
 
 {%endblock%}
