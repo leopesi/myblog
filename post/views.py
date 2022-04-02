@@ -13,7 +13,8 @@ def post_create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            post = form.save()
+            post = form.save(commit=False)
+            post.author = request.user
             post.text = post.text.upper()
             post.save()
             return redirect('post_detail', slug=post.slug)
