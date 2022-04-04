@@ -41,19 +41,26 @@
                                 <div class="row">
                                     <div class="col-md-12 ps-md-2">
                                         <div class="input-group input-group-static mb-4">
+                                            <div class="col-6 form-select-line-height">
+                                                <p class="card-text ">Autor: {{ request.user  }}</
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 ps-md-2">
+                                        <div class="input-group input-group-static mb-4">
                                             <div class="col-12">
                                                 {{ form.title|as_crispy_field }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12 ps-md-2">
-                                        <div class="input-group input-group-static mb-4">
-                                            <div class="col-6">
-                                                {{ form.status|as_crispy_field }}
-                                            </div>
-                                            <div class="col-6 form-select-line-height">
-                                                {{ form.author|as_crispy_field }}
-                                            </div>
+                                        <div class="col-6">
+                                            {{ form.status|as_crispy_field }}
+                                        </div>
+                                        <div class="form-check form-switch mb-4 d-flex align-items-center">
+                                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked="">
+                                          <label class="form-check-label ms-3 mb-0" for="flexSwitchCheckDefault">I agree to the <a href="javascript:;" class="text-dark"><u>Terms and Conditions</u></a>.</label>
                                         </div>
                                     </div>
                                     <div class="col-md-12 ps-md-2">
@@ -61,6 +68,7 @@
                                             <div class="col-12">
                                                 {{ form.slug|as_crispy_field }}
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="col-md-12 ps-md-2">
